@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+ <hibernate-mapping>
+ <class name="model.Actor" table="Hero">
+ <id name ="Aid">
+ <generator class="assigned"></generator></id>
+ <property name="name" ></property>
+ <set name="movies" cascade="none" lazy="false" table="MovieT">
+ <key column="Aid" not-null="true" ></key>
+ <one-to-many class="model.Movies"></one-to-many>
+ </set>
+  </class>
+ </hibernate-mapping>

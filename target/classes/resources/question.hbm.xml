@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+ <class name="model.Question" table="QuestTab">
+ <id name="Qid" > 
+ <generator class="assigned"></generator></id>
+ <property name="Qname"></property>
+ 
+ <list name="answer"  table="AnswTab" lazy="false" cascade="all">
+ <key column ="Qid" ></key>
+ <list-index base="1" > </list-index>
+ <one-to-many class="model.Answer"/>
+ </list>
+ </class>
+ 
+ </hibernate-mapping>  
